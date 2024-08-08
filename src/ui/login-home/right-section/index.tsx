@@ -6,7 +6,7 @@ import TextDivider from "@/components/text-divider";
 
 export default function LoginRightSection() {
   return (
-    <div className="flex-1 flex flex-col justify-center text-[#E7E9EA] px-9">
+    <section className="flex-1 flex flex-col justify-center text-[#E7E9EA] px-9">
       <h1 className="my-8 text-[64px] font-bold whitespace-nowrap tracking-[-1.2px]">
         지금 일어나고 있는 일
       </h1>
@@ -43,12 +43,12 @@ export default function LoginRightSection() {
             as="link"
             href="/i/flow/login"
             appearance="black"
-            className="border border-[#536471] text-[#1d9bf0] hover:bg-gray-100/50 an"
+            className="border border-[#536471] text-[#1d9bf0] hover:bg-gray-100/50 animate"
           >
             로그인
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
