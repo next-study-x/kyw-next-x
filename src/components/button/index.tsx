@@ -20,7 +20,7 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   const classes = clsx(
-    style.button,
+    "w-[300px] rounded-[20px] p-2 bg-white flex items-center justify-center text-15 font-bold",
     {
       [style.isBlack]: appearance === "black",
       [style.isBlue]: appearance === "blue",
