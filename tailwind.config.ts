@@ -17,22 +17,13 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      colors: {
-        gray: {
-          100: "#2f3336",
-          600: "#E7E9EA",
-        },
-        blue: {
-          500: "#1d9bf0",
-        },
-      },
       fontSize: {
         6: "0.375em",
         7: "0.438em",
         8: "0.500em",
         9: "0.563em",
         10: "0.625em",
-        11: "0.688em",
+        11: "11px",
         12: "0.750em",
         13: "0.813em",
         14: "0.875em",
@@ -42,6 +33,7 @@ const config: Config = {
         20: "1.250em",
         22: "1.375em",
         24: "1.500em",
+        64: "64px",
       },
       borderRadius: {
         4: "4px",
@@ -49,6 +41,15 @@ const config: Config = {
         12: "12px",
         16: "16px",
         20: "20px",
+      },
+      colors: {
+        gray: {
+          100: "#2f3336",
+          600: "#E7E9EA",
+        },
+        blue: {
+          500: "#1d9bf0",
+        },
       },
     },
   },
