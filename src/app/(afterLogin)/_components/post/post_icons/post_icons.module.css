@@ -1,0 +1,51 @@
+.comment {
+  display: flex;
+  align-items: center;
+}
+
+.comment:hover .child-div {
+  background-color: #051824;
+}
+
+.comment:hover .child-svg {
+  fill: rgb(29, 155, 240) !important;
+}
+
+.comment:hover .child-p {
+  color: rgb(29, 155, 240) !important;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+}
+
+.share:hover .child-div {
+  background-color: #052414;
+}
+
+.share:hover .child-svg {
+  fill: rgb(0, 186, 124) !important;
+}
+
+.share:hover .child-p {
+  color: rgb(0, 186, 124) !important;
+}
+
+
+.heart {
+  display: flex;
+  align-items: center;
+}
+
+.heart:hover .child-div {
+  background-color: #24050a;
+}
+
+.heart:hover .child-svg {
+  fill: rgb(249, 24, 128) !important;
+}
+
+.heart:hover .child-p {
+  color: rgb(249, 24, 128) !important;
+}
