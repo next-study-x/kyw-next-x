@@ -29,7 +29,7 @@ export default function SignForm() {
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
         </div>
-        <p className="pt-3 text-blue-500 text-15 text-end">
+        <p className="pt-3 text-blue-500 text-15 text-end hover:underline">
           대신 이메일 사용하기
         </p>
         <div className="mt-5 flex-1">

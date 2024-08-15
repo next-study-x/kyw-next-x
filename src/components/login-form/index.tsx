@@ -1,6 +1,5 @@
 "use client";
 
-import XLogo from "../../../public/Zlogogg.png";
 import GoogleLogo from "../../../public/googleLogo.png";
 
 import Link from "next/link";
@@ -38,10 +37,10 @@ const LoginForm = () => {
           <TextDivider text="또는" className="text-[17px]" />
           <input
             type="text"
-            className="mt-3 w-full h-[56px] pl-2 placeholder:text-[#71767a] placeholder:text-[16px] bg-black border border-gray-100 rounded"
+            className="outline-none text-white mt-3 w-full h-[56px] pl-2 placeholder:text-[#71767a] placeholder:text-[16px] bg-black border border-gray-100 rounded"
             placeholder="휴대폰 번호, 이메일 주소 또는 사용자 아이디"
           />
-          <Button as="link" className="mt-6">
+          <Button href="/home" as="link" className="mt-6">
             다음
           </Button>
           <Button

@@ -3,6 +3,7 @@ import GoogleLogo from "../../../../public/googleLogo.png";
 import Image from "next/image";
 import Button from "@/components/button";
 import TextDivider from "@/components/text-divider";
+import Link from "next/link";
 
 export default function LoginRightSection() {
   return (
@@ -12,14 +13,16 @@ export default function LoginRightSection() {
       </h1>
       <h2 className="mb-8 text-[31px] font-bold">지금 가입하세요.</h2>
       <div className="flex flex-col gap-2">
-        <div className="p-2 rounded-[20px] w-[300px] h-[38px] flex items-center gap-2 bg-white">
-          <div className="p-1 bg-[#689f38] rounded-full text-[8px]">영웅</div>
-          <div className="flex-1 flex flex-col text-[11px]">
-            <p className="text-[#3c4043]">영웅(으)로 로그인</p>
-            <p className="text-[#5f6368]">houndhollis9797@gmail.com</p>
+        <Link href={"/home"}>
+          <div className="p-2 rounded-[20px] w-[300px] h-[38px] flex items-center gap-2 bg-white">
+            <div className="p-1 bg-[#689f38] rounded-full text-[8px]">영웅</div>
+            <div className="flex-1 flex flex-col text-[11px]">
+              <p className="text-[#3c4043]">영웅(으)로 로그인</p>
+              <p className="text-[#5f6368]">houndhollis9797@gmail.com</p>
+            </div>
+            <Image src={GoogleLogo} width={18} height={18} alt="구글로고" />
           </div>
-          <Image src={GoogleLogo} width={18} height={18} alt="구글로고" />
-        </div>
+        </Link>
         <Button as="button" className="text-black">
            Apple에서 가입하기
         </Button>

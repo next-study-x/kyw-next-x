@@ -1,10 +1,6 @@
 import Footer from "@/components/footer";
 import LoginLeftSection from "@/ui/login-home/left-section";
 import LoginRightSection from "@/ui/login-home/right-section";
-import Button from "@/components/button";
-import Image from "next/image";
-import GoogleLogo from "../../../public/googleLogo.png";
-import TextDivider from "@/components/text-divider";
 
 export default function Home() {
   return (
