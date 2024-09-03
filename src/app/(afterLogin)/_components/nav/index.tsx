@@ -180,7 +180,7 @@ export default function NavSection() {
       </ul>
       <Link
         className="my-4 flex items-center justify-center h-[52px] bg-blue-500 text-white w-[234px] font-bold text-[17px] rounded-[26px] hover:bg-[#1a8cd8]"
-        href={"/compose/tweet"}
+        href={"/compose/post"}
       >
         Post
       </Link>

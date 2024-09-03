@@ -1,6 +1,6 @@
 export default function Trend() {
   return (
-    <div className="py-3 px-3 flex flex-col">
+    <div className="p-3 flex flex-col">
       <div className="flex items-center justify-between">
         <p className="text-13 text-[#71767B]">Trending in South Korea</p>
         <svg
