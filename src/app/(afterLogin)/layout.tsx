@@ -2,7 +2,13 @@ import NavSection from "./_components/nav";
 import NavProfile from "./_components/nav_profile";
 import NavSearchSection from "./_components/nav_search_section";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({
+  children,
+  modal,
+}: {
+  children: React.ReactNode;
+  modal: React.ReactNode;
+}) {
   return (
     <div className="h-full flex items-stretch bg-[#000]">
       <header className="grow flex flex-col items-end">
@@ -19,6 +25,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <NavSearchSection />
         </div>
       </div>
+      {modal}
     </div>
   );
 }
