@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 export default function Trend() {
   return (
-    <div className="p-3 flex flex-col">
+    <Link href={"/search?q=트렌드"} className="p-3 flex flex-col">
       <div className="flex items-center justify-between">
         <p className="text-13 text-[#71767B]">Trending in South Korea</p>
         <svg
@@ -16,6 +18,6 @@ export default function Trend() {
       </div>
       <p className="text-15 text-[#e7e9ea] font-bold">코딩하는 영웅</p>
       <p className="text-13 text-[#71767B]">4,222 posts</p>
-    </div>
+    </Link>
   );
 }

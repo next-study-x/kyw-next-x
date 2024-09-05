@@ -14,7 +14,7 @@ const LoginForm = () => {
   const router = useRouter();
 
   return (
-    <Modal>
+    <Modal className="top-[25%]">
       <Modal.header />
       <Modal.body>
         <div className="mx-auto min-w-[364px] max-w-[364px] px-8">

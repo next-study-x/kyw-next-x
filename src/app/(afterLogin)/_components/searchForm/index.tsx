@@ -1,6 +1,6 @@
-export default function SearchForm() {
+export default function SearchForm({ q }: { q?: string }) {
   return (
-    <div className="p-3 border-b border-gray-100">
+    <div className="p-3 border-b border-r border-gray-100 w-full">
       <form className="flex items-center sticky top-[-0.5px] h-[42px] w-full rounded-[20px] bg-[#202327] z-50">
         <svg
           className="ml-5"
@@ -14,7 +14,7 @@ export default function SearchForm() {
           </g>
         </svg>
         <input
-          className="outline-none h-full bg-[#202327] border-none p-3 ml-[5px] text-15"
+          className="outline-none h-full text-white bg-[#202327] border-none p-3 ml-[5px] text-15"
           type="search"
           placeholder="Search"
         />
