@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import XLogo from "../../../public/Zlogogg.png";
 
-export function ModalHeader() {
+export function ModalHeader({ isHome = false }) {
   const router = useRouter();
 
   const onClose = () => {
@@ -12,7 +12,7 @@ export function ModalHeader() {
   };
 
   return (
-    <div>
+    <div className="h-[50px]">
       <button
         onClick={onClose}
         className="absolute w-[34px] h-[34px] border-none cursor-pointer left-4 top-4 hover:bg-black/50"
@@ -31,7 +31,7 @@ export function ModalHeader() {
           </g>
         </svg>
       </button>
-      <Image src={XLogo} width={30} height={30} alt="X logo" />
+      {!isHome && <Image src={XLogo} width={30} height={30} alt="X logo" />}
     </div>
   );
 }
@@ -46,13 +46,21 @@ export function ModalBody({
 Modal.body = ModalBody;
 Modal.header = ModalHeader;
 
-export default function Modal({ children }: React.PropsWithChildren) {
+export default function Modal({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
     <div
       style={{ backgroundColor: "rgba(86, 99, 110, 0.4)" }}
-      className="w-[100vw] h-full flex items-center justify-center absolute inset-0"
+      className="w-[100vw] h-full flex justify-center absolute inset-0 z-50"
     >
-      <div className="py-[12px] relative bg-black w-[600px] h-[650px] flex flex-col items-center rounded-16">
+      <div
+        className={`py-[12px] relative bg-black w-[600px] h-[650px] flex flex-col items-center rounded-16 ${className}`}
+      >
         {children}
       </div>
     </div>
