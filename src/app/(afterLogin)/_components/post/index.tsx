@@ -2,10 +2,30 @@ import Image from "next/image";
 import TripImage from "../../../../../public/trip.png";
 import PostIcons from "./post_icons";
 import { dateFormatter } from "@/utils/date_format";
+import PostArticle from "./post_article";
+import Link from "next/link";
+import { faker } from "@faker-js/faker";
 
 export default function Post() {
+  const target = {
+    postId: 1,
+    User: {
+      id: "woong_zzang97",
+      nickname: "영웅",
+      image: "/trip.png",
+    },
+    content: "바다가고 싶다..",
+    createdAt: new Date(),
+    Images: [
+      {
+        imageId: 1,
+        link: faker.image.urlLoremFlickr(),
+      },
+    ],
+  };
+
   return (
-    <div className="relative px-4 py-3 flex border-b gap-2 border-gray-100">
+    <PostArticle post={target}>
       <div>
         <div className="w-[40px] h-[40px] flex items-center justify-center bg-[#689f38] rounded-full">
           <p className="text-white">영웅</p>
@@ -14,7 +34,12 @@ export default function Post() {
       <div className="flex flex-col flex-grow">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1 self-start">
-            <p className=" text-15 text-[#E7E9EA] font-bold">woong_zzang97</p>
+            <Link
+              href={`/${target.User.id}`}
+              className=" text-15 text-[#E7E9EA] font-bold"
+            >
+              woong_zzang97
+            </Link>
             <svg
               fill="rgb(29 155 240)"
               viewBox="0 0 22 22"
@@ -45,11 +70,21 @@ export default function Post() {
           </div>
         </div>
         <p className="text-white">🚨 바다 가고 싶습니다, </p>
-        <div className="mt-3 w-full flex items-center justify-center h-auto border border-gray-100 rounded-[20px]">
-          <Image src={TripImage} alt="강원 사진" className="" />
+        <div className="relative pt-[77%] mt-3 w-full !max-h-[500] flex items-center justify-center border border-gray-100 rounded-[20px]">
+          <Link
+            href={`/${target.User.id}/status/${target.postId}/photo/${target.Images[0].imageId}`}
+          >
+            <Image
+              width={300}
+              height={300}
+              src={target.Images[0].link}
+              alt="강원 사진"
+              className="absolute inset-0 w-full h-full object-cover rounded"
+            />
+          </Link>
         </div>
         <PostIcons />
       </div>
-    </div>
+    </PostArticle>
   );
 }
