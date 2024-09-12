@@ -3,7 +3,7 @@ import styles from "./post_icons.module.css";
 
 export default function PostIcons() {
   return (
-    <div className="mt-2 flex items-center gap-14">
+    <div className="mt-2 flex items-center justify-around">
       <div className={clsx(styles.comment)}>
         <div
           className={clsx(
