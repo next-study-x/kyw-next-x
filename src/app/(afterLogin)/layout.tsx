@@ -12,15 +12,15 @@ export default function Layout({
   return (
     <div className="h-full flex items-stretch bg-[#000]">
       <header className="grow flex flex-col items-end">
-        <section className="w-[275px] h-screen">
-          <div className="p-2 fixed w-[275px] h-screen flex flex-col">
+        <section className="w-[72px] lg:w-[275px] h-screen">
+          <div className="p-2 fixed w-[inherit] px-2 lg:px-0 h-screen flex flex-col items-center lg:items-stretch">
             <NavSection />
             <NavProfile />
           </div>
         </section>
       </header>
       <div className="flex items-start h-full flex-col grow">
-        <div className=" h-full w-[990px] flex justify-between">
+        <div className=" h-full w-[660px] lg:w-[990px] flex justify-between">
           <main className="w-[600px] border-x border-gray-100">{children}</main>
           <NavSearchSection />
         </div>

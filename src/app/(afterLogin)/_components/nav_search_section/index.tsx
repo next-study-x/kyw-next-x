@@ -8,7 +8,7 @@ export default function NavSearchSection() {
   const pathname = usePathname();
 
   return (
-    <section className="w-[350px] flex flex-col gap-4">
+    <section className="hidden md:inline-flex w-[350px] flex-col gap-4">
       {pathname !== "/explore" && (
         <form className="flex items-center sticky top-[-0.5px] h-[42px] w-[350px] mt-1.5 rounded-[20px] bg-[#202327] z-50">
           <svg

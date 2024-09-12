@@ -5,6 +5,7 @@ import { dateFormatter } from "@/utils/date_format";
 import PostArticle from "./post_article";
 import Link from "next/link";
 import { faker } from "@faker-js/faker";
+import PostImages from "./post_images";
 
 export default function Post() {
   const target = {
@@ -19,6 +20,18 @@ export default function Post() {
     Images: [
       {
         imageId: 1,
+        link: faker.image.urlLoremFlickr(),
+      },
+      {
+        imageId: 2,
+        link: faker.image.urlLoremFlickr(),
+      },
+      {
+        imageId: 3,
+        link: faker.image.urlLoremFlickr(),
+      },
+      {
+        imageId: 4,
         link: faker.image.urlLoremFlickr(),
       },
     ],
@@ -70,18 +83,8 @@ export default function Post() {
           </div>
         </div>
         <p className="text-white">🚨 바다 가고 싶습니다, </p>
-        <div className="relative pt-[77%] mt-3 w-full !max-h-[500] flex items-center justify-center border border-gray-100 rounded-[20px]">
-          <Link
-            href={`/${target.User.id}/status/${target.postId}/photo/${target.Images[0].imageId}`}
-          >
-            <Image
-              width={300}
-              height={300}
-              src={target.Images[0].link}
-              alt="강원 사진"
-              className="absolute inset-0 w-full h-full object-cover rounded"
-            />
-          </Link>
+        <div>
+          <PostImages post={target} />
         </div>
         <PostIcons />
       </div>
