@@ -27,8 +27,8 @@ export default function PhotoModal() {
           </div>
         </div>
       </div>
-      <div className="w-[350px] bg-white border-l border-gray-200 overflow-auto">
-        <Post />
+      <div className="w-[350px] bg-black border-l border-gray-100 overflow-y-auto">
+        <Post noImage />
         <CommentForm />
         <Post />
         <Post />

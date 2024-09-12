@@ -7,7 +7,11 @@ import Link from "next/link";
 import { faker } from "@faker-js/faker";
 import PostImages from "./post_images";
 
-export default function Post() {
+type Props = {
+  noImage?: boolean;
+};
+
+export default function Post({ noImage }: Props) {
   const target = {
     postId: 1,
     User: {
@@ -83,9 +87,11 @@ export default function Post() {
           </div>
         </div>
         <p className="text-white">🚨 바다 가고 싶습니다, </p>
-        <div>
-          <PostImages post={target} />
-        </div>
+        {!noImage && (
+          <div>
+            <PostImages post={target} />
+          </div>
+        )}
         <PostIcons />
       </div>
     </PostArticle>
