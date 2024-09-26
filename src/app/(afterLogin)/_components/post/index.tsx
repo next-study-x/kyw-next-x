@@ -1,5 +1,3 @@
-import Image from "next/image";
-import TripImage from "../../../../../public/trip.png";
 import PostIcons from "./post_icons";
 import { dateFormatter } from "@/utils/date_format";
 import PostArticle from "./post_article";

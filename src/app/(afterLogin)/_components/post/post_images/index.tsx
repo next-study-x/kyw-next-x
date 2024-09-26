@@ -61,6 +61,7 @@ export default function PostImages({ post }: Props) {
       </div>
     );
   }
+
   if (post.Images.length === 3) {
     return (
       <div className={clsx(style.postImageSection, style.threeImage)}>
@@ -90,6 +91,7 @@ export default function PostImages({ post }: Props) {
       </div>
     );
   }
+
   if (post.Images.length === 4) {
     return (
       <div className={clsx(style.postImageSection, style.fourImage)}>
