@@ -12,7 +12,7 @@ export default function NavSection() {
   const me = {
     id: "my",
   };
-  console.log(XLogo);
+
   return (
     <div className="flex-1">
       <Link className="inline-block mb-2" href={"/home"}>
