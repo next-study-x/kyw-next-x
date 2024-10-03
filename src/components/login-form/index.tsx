@@ -9,15 +9,45 @@ import Button from "../button";
 import TextDivider from "../text-divider";
 import { useRouter } from "next/navigation";
 import Modal from "../modal";
+import { ChangeEventHandler, FormEventHandler, useState } from "react";
+import { signIn } from "next-auth/react";
 
 const LoginForm = () => {
   const router = useRouter();
+
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
+    try {
+      await signIn("credentials", {
+        username: id,
+        password,
+        redirect: false,
+      });
+      router.replace("/home");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const onChangeId: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setId(e.target.value);
+  };
+
+  const onChangePassword: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setPassword(e.target.value);
+  };
 
   return (
     <Modal className="top-[25%]">
       <Modal.header />
       <Modal.body>
-        <div className="mx-auto min-w-[364px] max-w-[364px] px-8">
+        <form
+          onSubmit={onSubmit}
+          className="mx-auto min-w-[364px] max-w-[364px] px-8"
+        >
           <h1 className="mt-6 mb-7 text-gray-600 text-[31px] font-bold">
             X 가입하기
           </h1>
@@ -38,9 +68,18 @@ const LoginForm = () => {
           <input
             type="text"
             className="outline-none text-white mt-3 w-full h-[56px] pl-2 placeholder:text-[#71767a] placeholder:text-[16px] bg-black border border-gray-100 rounded"
-            placeholder="휴대폰 번호, 이메일 주소 또는 사용자 아이디"
+            placeholder="이메일 주소 또는 사용자 아이디"
+            value={id}
+            onChange={onChangeId}
           />
-          <Button href="/home" as="link" className="mt-6">
+          <input
+            type="password"
+            className="outline-none text-white mt-3 w-full h-[56px] pl-2 placeholder:text-[#71767a] placeholder:text-[16px] bg-black border border-gray-100 rounded"
+            placeholder="비밀번호를 입력해주세요."
+            value={password}
+            onChange={onChangePassword}
+          />
+          <Button type="submit" as={"button"} className="mt-6">
             다음
           </Button>
           <Button
@@ -57,7 +96,7 @@ const LoginForm = () => {
               가입하기
             </Link>
           </div>
-        </div>
+        </form>
       </Modal.body>
     </Modal>
   );
