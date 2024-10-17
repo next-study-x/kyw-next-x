@@ -2,6 +2,7 @@ import { auth } from "@/auth";
 import NavSection from "./_components/nav";
 import NavProfile from "./_components/nav_profile";
 import NavSearchSection from "./_components/nav_search_section";
+import RQProvider from "./config/RQProvider";
 
 export default async function Layout({
   children,
@@ -26,14 +27,18 @@ export default async function Layout({
           </div>
         </section>
       </header>
-      <div className="flex items-start h-full flex-col grow">
-        <div className=" h-full w-[660px] lg:w-[990px] flex justify-between">
-          <main className="w-[600px] border-x border-gray-100">{children}</main>
+      <RQProvider>
+        <div className="flex items-start h-full flex-col grow">
+          <div className=" h-full w-[660px] lg:w-[990px] flex justify-between">
+            <main className="w-[600px] border-x border-gray-100">
+              {children}
+            </main>
 
-          {session?.user && <NavSearchSection />}
+            {session?.user && <NavSearchSection />}
+          </div>
         </div>
-      </div>
-      {modal}
+        {modal}
+      </RQProvider>
     </div>
   );
 }
