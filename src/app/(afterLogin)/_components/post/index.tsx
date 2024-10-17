@@ -4,22 +4,17 @@ import PostArticle from "./post_article";
 import Link from "next/link";
 import { faker } from "@faker-js/faker";
 import PostImages from "./post_images";
+import { PostItem } from "@/model/Post";
 
 type Props = {
   noImage?: boolean;
+  post: PostItem;
 };
 
-export default function Post({ noImage }: Props) {
-  const target = {
-    postId: 1,
-    User: {
-      id: "woong_zzang97",
-      nickname: "영웅",
-      image: "/trip.png",
-    },
-    content: "바다가고 싶다..",
-    createdAt: new Date(),
-    Images: [
+export default function Post({ noImage, post }: Props) {
+  const target = post;
+  if (Math.random() > 0.5 && !noImage) {
+    target.Images.push(
       {
         imageId: 1,
         link: faker.image.urlLoremFlickr(),
@@ -35,9 +30,9 @@ export default function Post({ noImage }: Props) {
       {
         imageId: 4,
         link: faker.image.urlLoremFlickr(),
-      },
-    ],
-  };
+      }
+    );
+  }
 
   return (
     <PostArticle post={target}>
